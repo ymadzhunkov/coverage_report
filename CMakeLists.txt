@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 project(myproject)
-
+enable_testing() 
 # Add project cmake modules to path.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
 
@@ -14,3 +14,4 @@ endif()
 
 add_subdirectory(libA)
 add_subdirectory(unit_tests)
+add_subdirectory(integration_tests)
