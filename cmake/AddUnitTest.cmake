@@ -5,8 +5,7 @@ macro(add_unit_test_target)
 
     #Run unit test as part of build
     add_custom_command(TARGET ${UNIT_TEST_TARGET} POST_BUILD COMMAND $<TARGET_FILE:${UNIT_TEST_TARGET}>)
-       
-    set(tmp ${UNIT_TEST_TARGETS})
-    list(APPEND tmp ${UNIT_TEST_TARGETS})
-    set(UNIT_TEST_TARGETS ${tmp} CACHE INTERNAL "All unit test targets")
+
+    #Register unit test in ctests
+    add_test(NAME unittest_${UNIT_TEST_TARGET} COMMAND $<TARGET_FILE:${UNIT_TEST_TARGET}>)
 endmacro()
