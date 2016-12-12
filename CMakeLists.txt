@@ -11,3 +11,6 @@ if (REPORT_COVERAGE)
     include(CoverageReport)
     turn_on_coverage_report()
 endif()
+
+add_subdirectory(libA)
+add_subdirectory(unit_tests)
